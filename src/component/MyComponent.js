@@ -1,14 +1,13 @@
-
 import React, { Component } from "react";
-// you have to import a component HOC here 
-
+// you have to import a component HOC here
+import withHoverEffect from "./withHoverEffect";
 class MyComponent extends Component {
   render() {
-    const { ..., ... } = this. ; // Destructure the props
+    const { handleMouseEnter, style } = this.props; // Destructure the param to pass them as props
 
     return (
       <div>
-        <button onMouseOver={...} style={{ background: ... }}>
+        <button onMouseOver={handleMouseEnter} style={{ background: style }}>
           on hover background
         </button>
       </div>
@@ -17,18 +16,4 @@ class MyComponent extends Component {
 }
 
 // adjust this export so the original componenent is a parameter for the HOC to pass her a props
-export default MyComponent;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default withHoverEffect(MyComponent);

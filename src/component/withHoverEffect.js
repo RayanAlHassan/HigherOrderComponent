@@ -22,20 +22,13 @@ function withHoverEffect(WrappedComponent) {
       const backgroundColor = this.state.isHovered ? "red" : "transparent";
 
       return (
-
-        <  // ...
-        // give parameter as props for undefined variable in the original/wrapped component
-        //   ...={...}
+        <WrappedComponent
+          handleMouseEnter={this.handleMouseEnter}
           style={backgroundColor}
         />
-
       );
     }
   };
 }
 
 export default withHoverEffect;
-
-
-
-
